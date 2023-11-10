@@ -1,4 +1,4 @@
-# Online phone catalog
+# Todo App
 
   A single-page application implements a copy of existing Todo app. User can add todos, remove or rename them, mark them as completed, remove todos, sort them by completeness.
 
