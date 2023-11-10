@@ -17,7 +17,7 @@
 
 # Structure
 
-  App is built using functional components, React Hooks and Custom Hooks. Each component is abstract and fully reusable. Components are styled using Sass (SCSS). BEM methodology is used for naming and styling.
+  App is built using functional components, React Hooks and Custom Hooks. Each component is abstract and fully reusable. Components are styled using Sass (SCSS).
 
 # Features & Functionality
   - User can add todo throw the input field,
