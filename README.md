@@ -39,4 +39,4 @@
 
  At the end of the day, I've figured out how to work with bigger projects and how to use mentioned technologies all together.
 
-### This project is inspired by original [2048 game](http://todomvc.com/examples/vanillajs/)
+### This project is inspired by original [Todo App](http://todomvc.com/examples/vanillajs/)
