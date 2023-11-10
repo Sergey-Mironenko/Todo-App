@@ -1,11 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.scss';
-import { App } from './App';
+import { createRoot } from 'react-dom/client';
+import { HashRouter as Router } from 'react-router-dom';
+import { TodosProvider } from './TodoContext';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root'),
-);
+import './styles/index.scss';
+import './styles/todo-list.scss';
+import './styles/filters.scss';
+
+import { AppContainer } from './AppContainer';
+
+createRoot(document.getElementById('root') as HTMLDivElement)
+  .render(
+    <Router>
+      <TodosProvider>
+        <AppContainer />
+      </TodosProvider>
+    </Router>,
+  );
