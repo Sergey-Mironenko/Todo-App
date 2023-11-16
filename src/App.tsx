@@ -77,9 +77,7 @@ export const App: React.FC<Props> = ({
     if (timer2.current) {
       clearTimeout(timer2.current);
     }
-  }, [error]);
 
-  useEffect(() => {
     if (error) {
       timer1.current = setTimeout(() => {
         setIsVisible(false);
