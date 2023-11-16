@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { UserWarning } from './UserWarning';
 import { getTodos } from './api/todos';
@@ -29,9 +29,13 @@ export const App: React.FC<Props> = ({
     error,
     setError,
   } = useTodo();
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
   const { pathname } = useLocation();
   const [filter, setFilter] = useState(FilterStatus.all);
+  // eslint-disable-next-line
+  const timer1 = useRef<any>(0);
+  // eslint-disable-next-line
+  const timer2 = useRef<any>(0);
 
   const active = todos.filter(todo => todo.completed === false).length;
   const completed = todos.filter(todo => todo.completed).length;
@@ -66,23 +70,22 @@ export const App: React.FC<Props> = ({
   }, []);
 
   useEffect(() => {
-    let timer1;
-    let timer2;
+    if (timer1.current) {
+      clearTimeout(timer1.current);
+    }
 
+    if (timer2.current) {
+      clearTimeout(timer2.current);
+    }
+  }, [error]);
+
+  useEffect(() => {
     if (error) {
-      if (timer1) {
-        clearTimeout(timer1);
-      }
-
-      if (timer2) {
-        clearTimeout(timer2);
-      }
-
-      timer1 = setTimeout(() => {
+      timer1.current = setTimeout(() => {
         setIsVisible(false);
       }, 3000);
 
-      timer2 = setTimeout(() => {
+      timer2.current = setTimeout(() => {
         setError(ErrorStatus.none);
       }, 3700);
     } else {

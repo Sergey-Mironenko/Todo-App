@@ -47,8 +47,9 @@ export const TodoCard: React.FC<Props> = ({
   };
 
   const rename = async () => {
+    setError(ErrorStatus.none);
+
     if (updatedTitle !== '') {
-      setError(ErrorStatus.none);
       setIsUpdating(true);
 
       try {
