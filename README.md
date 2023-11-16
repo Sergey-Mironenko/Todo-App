@@ -26,7 +26,7 @@
   - All the todos can be marked as completed, or active by clicking on arrow near the input field,
   - Each todo can be renamed by double click,
   - Under the todo list there are buttons to filter todos by completeness and to remove all the active todos,
-  - If something gows wrong appropriate message will be shown,
+  - If something goes wrong appropriate message will be shown,
 
 # Reflections
  Project goals included using technologies learned up until this point and familiarizing myself with documentation for new features.
